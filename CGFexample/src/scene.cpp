@@ -3,6 +3,11 @@
 #include "CGFapplication.h"
 #include "CGFscene.h"
 #include "XMLscene.h"
+#include "myUnitCube.h"
+#include "myRectangle.h"
+#include "myCylinder.h"
+#include "mySphere.h"
+#include "myTriangle.h"
 
 #define BOARD_HEIGHT 6.0
 #define BOARD_WIDTH 6.4
@@ -77,7 +82,7 @@ void scene::init()
 			}
 		}
 	}
-
+	
 
 	float globalAmbientLight[4]={0,0,0,0};
 	float backgroundvalues[4]={0,0,0,0};
@@ -92,11 +97,11 @@ void scene::init()
 	char * cullface=qwerty->getCullface1();
 	char * cullorder=qwerty->getCullorder1();
 
-	globalAmbientLight[0]=qwerty->getLightingValuesAmbient(0);
-	globalAmbientLight[1]=qwerty->getLightingValuesAmbient(1);
-	globalAmbientLight[2]=qwerty->getLightingValuesAmbient(2);
-	globalAmbientLight[3]=qwerty->getLightingValuesAmbient(3);
-
+	globalAmbientLight[0]=qwerty->getGlobalAmbientLight(0);
+	globalAmbientLight[1]=qwerty->getGlobalAmbientLight(1);
+	globalAmbientLight[2]=qwerty->getGlobalAmbientLight(2);
+	globalAmbientLight[3]=qwerty->getGlobalAmbientLight(3);
+	
 	if(qwerty->getLightingEnabled())
 	{
 		glEnable(GL_LIGHTING);
@@ -118,7 +123,7 @@ void scene::init()
 		glLightModelf(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_FALSE);
 	}
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT,globalAmbientLight); 
-
+	
 	for(int i=0;i<qwerty->getPerspectiveSize();i++)
 	{
 		CGFcamera* camera0;
@@ -129,7 +134,7 @@ void scene::init()
 
 		cameras.push_back(camera0);
 	}
-
+	
 	for(int i=0;i<qwerty->getOmniSize();i++)
 	{
 		CGFlight* light0;
@@ -190,7 +195,7 @@ void scene::init()
 			light0->enable();
 		lights.push_back(light0);
 	}
-
+	
 
 	glEnable (GL_NORMALIZE);
 }
@@ -200,18 +205,18 @@ void scene::display()
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
 	glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-	//CGFscene::activeCamera->applyView();
+	CGFscene::activeCamera->applyView();
 	/*for(int i=0;i<cameras.size();i++)
 	{
-	cameras[i]->applyView();
+		cameras[i]->applyView();
 	}*/
-	/*for(int i=0;i<lights.size();i++)
+	for(int i=0;i<lights.size();i++)
 	{
 		lights[i]->draw();
-	}*/
-
+	}
+	
 	axis.draw();
-	/*
+	
 	for(int i=0; i<nodesvector.size();i++)
 	{
 		glPushMatrix();
@@ -239,28 +244,34 @@ void scene::display()
 		{
 			if(nodesvector[i].childs.noderefV[k].id=="origin");
 			{
-				//myUnitCube* cube;
-				//cube= new myUnitCube();
-				//cube->draw();
+				myUnitCube* cube;
+				cube= new myUnitCube();
+				cube->draw();
 			}
 		}
 		for(int k=0;k<nodesvector[i].childs.cylinderV.size();k++)
 		{
-
+			myCylinder* Cylinder;
+			Cylinder=new myCylinder();
+			Cylinder->draw(nodesvector[i].childs.cylinderV[k].base,nodesvector[i].childs.cylinderV[k].top,nodesvector[i].childs.cylinderV[k].height,nodesvector[i].childs.cylinderV[k].slices,nodesvector[i].childs.cylinderV[k].stacks);
 		}
 		for(int k=0;k<nodesvector[i].childs.rectangleV.size();k++)
 		{
-			//myRectangle* Rect;
-			//Rect= new myRectangle();
-			//Rect->draw(nodesvector[i].childs.rectangleV[k].xy1[0],nodesvector[i].childs.rectangleV[k].xy1[1],nodesvector[i].childs.rectangleV[k].xy2[0],nodesvector[i].childs.rectangleV[k].xy2[1]);
+			myRectangle* Rectangle;
+			Rectangle= new myRectangle();
+			Rectangle->draw(nodesvector[i].childs.rectangleV[k].xy1[0],nodesvector[i].childs.rectangleV[k].xy1[1],nodesvector[i].childs.rectangleV[k].xy2[0],nodesvector[i].childs.rectangleV[k].xy2[1]);
 		}
 		for(int k=0;k<nodesvector[i].childs.triangleV.size();k++)
 		{
-
+			myTriangle* Triangle;
+			Triangle= new myTriangle();
+			Triangle->draw(nodesvector[i].childs.triangleV[k].xyz1[0],nodesvector[i].childs.triangleV[k].xyz1[1],nodesvector[i].childs.triangleV[k].xyz1[2],nodesvector[i].childs.triangleV[k].xyz2[0],nodesvector[i].childs.triangleV[k].xyz2[1],nodesvector[i].childs.triangleV[k].xyz2[2],nodesvector[i].childs.triangleV[k].xyz3[0],nodesvector[i].childs.triangleV[k].xyz3[1],nodesvector[i].childs.triangleV[k].xyz3[2]);
 		}
 		for(int k=0;k<nodesvector[i].childs.sphereV.size();k++)
 		{
-
+			mySphere* Sphere;
+			Sphere= new mySphere();
+			Sphere->draw(nodesvector[i].childs.sphereV[k].radius,nodesvector[i].childs.sphereV[k].slices,nodesvector[i].childs.sphereV[k].stacks);
 		}
 		for(int k=0;k<nodesvector[i].childs.torusV.size();k++)
 		{
@@ -268,7 +279,7 @@ void scene::display()
 		}
 		glPopMatrix();
 	}
-	*/
+	
 
 	glutSwapBuffers();
 }

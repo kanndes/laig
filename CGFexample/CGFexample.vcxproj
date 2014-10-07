@@ -67,10 +67,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\myCylinder.cpp" />
+    <ClCompile Include="src\myRectangle.cpp" />
+    <ClCompile Include="src\mySphere.cpp" />
+    <ClCompile Include="src\myTriangle.cpp" />
+    <ClCompile Include="src\myUnitCube.cpp" />
     <ClCompile Include="src\scene.cpp" />
     <ClCompile Include="src\XMLScene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\myCylinder.h" />
+    <ClInclude Include="src\myRectangle.h" />
+    <ClInclude Include="src\mySphere.h" />
+    <ClInclude Include="src\myTriangle.h" />
+    <ClInclude Include="src\myUnitCube.h" />
     <ClInclude Include="src\scene.h" />
     <ClInclude Include="src\XMLScene.h" />
   </ItemGroup>
