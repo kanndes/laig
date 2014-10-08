@@ -1,0 +1,68 @@
+*torus
+*heranças
+*transformações
+*texturas
+*câmaras
+*luzes(ligar/desligar)
+*câmaras(alternar)
+*transparente, etc(opções)
+
+int current=0;
+	for(int i=0; i<nodesvector2.size();i++)
+	{
+		bool verify=true;
+		for(int j=0;j<nodesvector.size()&&verify;j++)
+		{
+			if(nodesvector[j].id==nodesvector2[i].id)
+			{
+				current=j;
+				verify=false;
+			}
+		}
+		if(verify)
+		{
+			nodesvector.push_back(nodesvector2[i]);
+		}
+		else
+		{
+			nodesvector[current].childs=nodesvector2[i].childs;
+			if(nodesvector2[i].appearenceref!="")
+			{
+				nodesvector[current].appearenceref=nodesvector2[i].appearenceref;
+			}
+			for(int k=0; k<nodesvector2[i].transformations.size();k++)
+			{
+				nodesvector[current].transformations.push_back(nodesvector2[i].transformations[k]);
+			}
+		}
+		for(int j=0;j<nodesvector2[i].childs.noderefV.size();j++)
+		{
+			for(int k=0; k<nodesvector.size()&&verify;k++)
+			{
+				verify=true;
+				if(nodesvector[k].id==nodesvector2[i].childs.noderefV[j].id)
+				{
+					verify=false;
+					for(int y=0;y<nodesvector2[i].transformations.size();y++)
+					{
+						nodesvector[k].transformations.push_back(nodesvector2[i].transformations[y]);
+					}
+					if(nodesvector2[i].appearenceref!="")
+					{
+						nodesvector[k].appearenceref=nodesvector2[i].appearenceref;
+					}
+				}
+			}
+			if(verify)
+			{
+				nodee temp;
+				temp.id=nodesvector2[i].childs.noderefV[j].id;
+				for(int k=0; k<nodesvector2[i].transformations.size();k++)
+				{
+					temp.transformations.push_back(nodesvector2[i].transformations[k]);
+				}
+				temp.appearenceref=nodesvector2[i].appearenceref;
+				nodesvector.push_back(temp);
+			}
+		}
+	}

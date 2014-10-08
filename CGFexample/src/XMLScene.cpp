@@ -26,7 +26,6 @@ XMLScene::XMLScene(char *filename)
 	globalsElement = anfElement->FirstChildElement( "globals" );
 	camerasElement = anfElement->FirstChildElement( "cameras" );
 	lightingElement =  anfElement->FirstChildElement( "lighting" );
-	leavesElement =  anfElement->FirstChildElement( "leaves" );
 	nodesElement =  anfElement->FirstChildElement( "nodes" );
 	textureElement = anfElement->FirstChildElement("textures");
 	appearenceElement = anfElement->FirstChildElement("appearances");
@@ -539,20 +538,15 @@ XMLScene::XMLScene(char *filename)
 		}
 		if (doublesidedElement)
 		{
-			int doublesided;
+			char *doublesided;
 			char *valString=NULL;
 			valString=(char *) lightingElement->Attribute("doublesided");
-			if(valString && sscanf(valString,"%i",&doublesided)==1)
-			{
-				printf("doublesided value: %i\n", doublesided);
-				if(doublesided)
+			
+				printf("doublesided value: %s\n", valString);
+				if(strcmp("true\n",valString)!=0)
 					lightingDoubleSided=true;
 				else lightingDoubleSided=false;
-			}
-			else
-			{
-				printf("Error parsing doublesided\n");
-			}
+			
 		}
 		else
 		{
@@ -567,20 +561,15 @@ XMLScene::XMLScene(char *filename)
 		}
 		if (localElement)
 		{
-			int local;
+			char *local;
 			char *valString=NULL;
 			valString=(char *) lightingElement->Attribute("local");
-			if(valString && sscanf(valString,"%i",&local)==1)
-			{
-				printf("local value: %i\n", local);
-				if(local)
+			
+				printf("local value: %s\n", valString);
+				if(strcmp("true\n",valString)!=0)
 					lightingLocal=true;
 				else lightingLocal=false;
-			}
-			else
-			{
-				printf("Error parsing local\n");
-			}
+			
 		}
 		else
 		{
@@ -595,20 +584,15 @@ XMLScene::XMLScene(char *filename)
 		}
 		if (enabledElement)
 		{
-			int enabled;
+			char *enabled;
 			char *valString=NULL;
 			valString=(char *) lightingElement->Attribute("enabled");
-			if(valString && sscanf(valString,"%i",&enabled)==1)
-			{
-				printf("enabled value: %i\n", enabled);
-				if(enabled)
+			
+				printf("enabled value: %s\n", valString);
+				if(strcmp("true\n",valString)!=0)
 					lightingEnabled=true;
 				else lightingEnabled=false;
-			}
-			else
-			{
-				printf("Error parsing enabled\n");
-			}
+			
 		}
 		else
 		{
@@ -673,18 +657,13 @@ XMLScene::XMLScene(char *filename)
 				}
 				if (enabledElement)
 				{
-					int enabled;
+					char *enabled;
 					char *valString=NULL;
 					valString=(char *) omniElement->Attribute("enabled");
-					if(valString && sscanf(valString,"%i",&enabled)==1)
-					{
-						printf("enabled value: %i\n", enabled);
-						temp.enabled=enabled;
-					}
-					else
-					{
-						printf("Error parsing enabled\n");
-					}
+					
+						printf("enabled value: %s\n", valString);
+						temp.enabled=valString;
+					
 				}
 				else
 				{
@@ -845,18 +824,13 @@ XMLScene::XMLScene(char *filename)
 				}
 				if (enabledElement)
 				{
-					int enabled;
+					char *enabled;
 					char *valString=NULL;
 					valString=(char *) spotElement->Attribute("enabled");
-					if(valString && sscanf(valString,"%i",&enabled)==1)
-					{
-						printf("enabled value: %i\n", enabled);
-						temp.enabled=enabled;
-					}
-					else
-					{
-						printf("Error parsing enabled\n");
-					}
+					
+						printf("enabled value: %s\n", valString);
+						temp.enabled=valString;
+					
 				}
 				else
 				{

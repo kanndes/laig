@@ -1,27 +1,20 @@
-﻿Build started 06/10/2014 17:16:34.
+﻿Build started 07/10/2014 19:07:53.
      1>Project "C:\Users\Rafael\Documents\GitHub\laig\CGFexample\CGFexample.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "..\buildtemp\CGFexample\CGFexample.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"..\buildtemp\CGFexample\\" /Fd"..\buildtemp\CGFexample\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt src\scene.cpp
          scene.cpp
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(27): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(30): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(49): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(54): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(56): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(62): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(76): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(213): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(220): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(223): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(153): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(165): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(174): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(190): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(204): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(237): warning C4018: '<' : signed/unsigned mismatch
      1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(243): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(246): warning C4390: ';' : empty controlled statement found; is this the intent?
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(252): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(258): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(264): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(270): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(276): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(249): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(255): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(261): warning C4018: '<' : signed/unsigned mismatch
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"bin\CGFexample.exe" /NOLOGO glew32.lib CGFlib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib tinyxml.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"..\buildtemp\CGFexample\CGFexample.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Rafael\Documents\GitHub\laig\CGFexample\bin\CGFexample.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"bin\CGFexample.lib" /MACHINE:X86 ..\buildtemp\CGFexample\main.obj
          ..\buildtemp\CGFexample\myCylinder.obj
@@ -58,4 +51,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:01.40
+Time Elapsed 00:00:01.23

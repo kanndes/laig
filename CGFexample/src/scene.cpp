@@ -21,68 +21,8 @@ std::vector<nodee> nodesvector2;
 void scene::init() 
 {
 	XMLScene *qwerty;
-	qwerty=new XMLScene("C:\\Users\\Rafael\\Documents\\Visual Studio 2010\\Projects\\CGFexample\\src\\default.anf");
-	nodesvector2=qwerty->getNodesvectorFull();
-	int current=0;
-	for(int i=0; i<nodesvector2.size();i++)
-	{
-		bool verify=true;
-		for(int j=0;j<nodesvector.size()&&verify;j++)
-		{
-			if(nodesvector[j].id==nodesvector2[i].id)
-			{
-				current=j;
-				verify=false;
-			}
-		}
-		if(verify)
-		{
-			nodesvector.push_back(nodesvector2[i]);
-		}
-		else
-		{
-			nodesvector[current].childs=nodesvector2[i].childs;
-			if(nodesvector2[i].appearenceref!="")
-			{
-				nodesvector[current].appearenceref=nodesvector2[i].appearenceref;
-			}
-			for(int k=0; k<nodesvector2[i].transformations.size();k++)
-			{
-				nodesvector[current].transformations.push_back(nodesvector2[i].transformations[k]);
-			}
-		}
-		for(int j=0;j<nodesvector2[i].childs.noderefV.size();j++)
-		{
-			for(int k=0; k<nodesvector.size()&&verify;k++)
-			{
-				verify=true;
-				if(nodesvector[k].id==nodesvector2[i].childs.noderefV[j].id)
-				{
-					verify=false;
-					for(int y=0;y<nodesvector2[i].transformations.size();y++)
-					{
-						nodesvector[k].transformations.push_back(nodesvector2[i].transformations[y]);
-					}
-					if(nodesvector2[i].appearenceref!="")
-					{
-						nodesvector[k].appearenceref=nodesvector2[i].appearenceref;
-					}
-				}
-			}
-			if(verify)
-			{
-				nodee temp;
-				temp.id=nodesvector2[i].childs.noderefV[j].id;
-				for(int k=0; k<nodesvector2[i].transformations.size();k++)
-				{
-					temp.transformations.push_back(nodesvector2[i].transformations[k]);
-				}
-				temp.appearenceref=nodesvector2[i].appearenceref;
-				nodesvector.push_back(temp);
-			}
-		}
-	}
-	
+	qwerty=new XMLScene("C:\\Users\\Rafael\\Documents\\GitHub\\laig\\CGFexample\\src\\default.anf");
+	nodesvector=qwerty->getNodesvectorFull();
 
 	float globalAmbientLight[4]={0,0,0,0};
 	float backgroundvalues[4]={0,0,0,0};
@@ -97,11 +37,11 @@ void scene::init()
 	char * cullface=qwerty->getCullface1();
 	char * cullorder=qwerty->getCullorder1();
 
-	globalAmbientLight[0]=qwerty->getGlobalAmbientLight(0);
-	globalAmbientLight[1]=qwerty->getGlobalAmbientLight(1);
-	globalAmbientLight[2]=qwerty->getGlobalAmbientLight(2);
-	globalAmbientLight[3]=qwerty->getGlobalAmbientLight(3);
-	
+	globalAmbientLight[0]=qwerty->getLightingValuesAmbient(0);
+	globalAmbientLight[1]=qwerty->getLightingValuesAmbient(1);
+	globalAmbientLight[2]=qwerty->getLightingValuesAmbient(2);
+	globalAmbientLight[3]=qwerty->getLightingValuesAmbient(3);
+
 	if(qwerty->getLightingEnabled())
 	{
 		glEnable(GL_LIGHTING);
@@ -123,7 +63,7 @@ void scene::init()
 		glLightModelf(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_FALSE);
 	}
 	glLightModelfv(GL_LIGHT_MODEL_AMBIENT,globalAmbientLight); 
-	
+
 	for(int i=0;i<qwerty->getPerspectiveSize();i++)
 	{
 		CGFcamera* camera0;
@@ -134,7 +74,7 @@ void scene::init()
 
 		cameras.push_back(camera0);
 	}
-	
+
 	for(int i=0;i<qwerty->getOmniSize();i++)
 	{
 		CGFlight* light0;
@@ -195,7 +135,7 @@ void scene::init()
 			light0->enable();
 		lights.push_back(light0);
 	}
-	
+
 
 	glEnable (GL_NORMALIZE);
 }
@@ -208,78 +148,143 @@ void scene::display()
 	CGFscene::activeCamera->applyView();
 	/*for(int i=0;i<cameras.size();i++)
 	{
-		cameras[i]->applyView();
+	cameras[i]->applyView();
 	}*/
 	for(int i=0;i<lights.size();i++)
 	{
 		lights[i]->draw();
 	}
-	
+
 	axis.draw();
-	
+	nodeMaster();
+	glutSwapBuffers();
+}
+
+void scene::nodeMaster()
+{
 	for(int i=0; i<nodesvector.size();i++)
 	{
 		glPushMatrix();
-		for(int j=0;j<nodesvector[i].transformations.size();j++)
-		{
-			if(nodesvector[i].transformations[j].scale1.factor[0]!=0)
-			{
-				glScalef(nodesvector[i].transformations[j].scale1.factor[0],nodesvector[i].transformations[j].scale1.factor[1],nodesvector[i].transformations[j].scale1.factor[2]);
-			}
-			if(nodesvector[i].transformations[j].rotate1.angle!=0)
-			{
-				if(nodesvector[i].transformations[j].rotate1.axis=="z")
-					glRotatef(nodesvector[i].transformations[j].rotate1.angle,0,0,1);
-				else if(nodesvector[i].transformations[j].rotate1.axis=="y")
-					glRotatef(nodesvector[i].transformations[j].rotate1.angle,0,1,0);
-				else 
-					glRotatef(nodesvector[i].transformations[j].rotate1.angle,1,0,0);
-			}
-			if(nodesvector[i].transformations[j].translate1.to[0]!=0 || nodesvector[i].transformations[j].translate1.to[1]!=0 || nodesvector[i].transformations[j].translate1.to[2]!=0)
-			{
-				glTranslatef(nodesvector[i].transformations[j].translate1.to[0],nodesvector[i].transformations[j].translate1.to[1],nodesvector[i].transformations[j].translate1.to[2]);
-			}
-		}
-		for(int k=0;k<nodesvector[i].childs.noderefV.size();k++)
-		{
-			if(nodesvector[i].childs.noderefV[k].id=="origin");
-			{
-				myUnitCube* cube;
-				cube= new myUnitCube();
-				cube->draw();
-			}
-		}
-		for(int k=0;k<nodesvector[i].childs.cylinderV.size();k++)
-		{
-			myCylinder* Cylinder;
-			Cylinder=new myCylinder();
-			Cylinder->draw(nodesvector[i].childs.cylinderV[k].base,nodesvector[i].childs.cylinderV[k].top,nodesvector[i].childs.cylinderV[k].height,nodesvector[i].childs.cylinderV[k].slices,nodesvector[i].childs.cylinderV[k].stacks);
-		}
-		for(int k=0;k<nodesvector[i].childs.rectangleV.size();k++)
-		{
-			myRectangle* Rectangle;
-			Rectangle= new myRectangle();
-			Rectangle->draw(nodesvector[i].childs.rectangleV[k].xy1[0],nodesvector[i].childs.rectangleV[k].xy1[1],nodesvector[i].childs.rectangleV[k].xy2[0],nodesvector[i].childs.rectangleV[k].xy2[1]);
-		}
-		for(int k=0;k<nodesvector[i].childs.triangleV.size();k++)
-		{
-			myTriangle* Triangle;
-			Triangle= new myTriangle();
-			Triangle->draw(nodesvector[i].childs.triangleV[k].xyz1[0],nodesvector[i].childs.triangleV[k].xyz1[1],nodesvector[i].childs.triangleV[k].xyz1[2],nodesvector[i].childs.triangleV[k].xyz2[0],nodesvector[i].childs.triangleV[k].xyz2[1],nodesvector[i].childs.triangleV[k].xyz2[2],nodesvector[i].childs.triangleV[k].xyz3[0],nodesvector[i].childs.triangleV[k].xyz3[1],nodesvector[i].childs.triangleV[k].xyz3[2]);
-		}
-		for(int k=0;k<nodesvector[i].childs.sphereV.size();k++)
-		{
-			mySphere* Sphere;
-			Sphere= new mySphere();
-			Sphere->draw(nodesvector[i].childs.sphereV[k].radius,nodesvector[i].childs.sphereV[k].slices,nodesvector[i].childs.sphereV[k].stacks);
-		}
-		for(int k=0;k<nodesvector[i].childs.torusV.size();k++)
-		{
-
-		}
+		whileChildren(i);
+		transformNode(i);
+		drawNode(i);
 		glPopMatrix();
+		if(!(nodesvector[i].childs.noderefV.empty()))
+		{
+			for(int q=0;q<nodesvector[i].childs.noderefV.size();q++)
+			{
+				heritage p;
+				p.id=nodesvector[i].childs.noderefV[q].id;
+				p.formerInfo=nodesvector[i].id;
+				insertHeritages(p);
+			}
+		}
 	}
-	
+}
 
-	glutSwapBuffers();
+void scene::whileChildren(int w){
+	for(int a=0; a<getHeritagesSize();a++)
+	{
+		if(strcmp(nodesvector[w].id,getHeritages(a).id)!=0)
+		{
+			for(int b=0; b<nodesvector.size();b++)
+			{
+				if(strcmp(getHeritages(a).id,nodesvector[b].id)!=0)
+				{
+					transformNode(b);
+					whileChildren(b);
+				}
+			}
+		}
+	}
+}
+
+void scene::transformNode(int i)
+{
+	for(int j=0;j<nodesvector[i].transformations.size();j++)
+	{
+		if(nodesvector[i].transformations[j].scale1.factor[0]!=0)
+		{
+			glScalef(nodesvector[i].transformations[j].scale1.factor[0],nodesvector[i].transformations[j].scale1.factor[1],nodesvector[i].transformations[j].scale1.factor[2]);
+		}
+		if(nodesvector[i].transformations[j].rotate1.angle!=0)
+		{
+			if(nodesvector[i].transformations[j].rotate1.axis=="z")
+				glRotatef(nodesvector[i].transformations[j].rotate1.angle,0,0,1);
+			else if(nodesvector[i].transformations[j].rotate1.axis=="y")
+				glRotatef(nodesvector[i].transformations[j].rotate1.angle,0,1,0);
+			else 
+				glRotatef(nodesvector[i].transformations[j].rotate1.angle,1,0,0);
+		}
+		if(nodesvector[i].transformations[j].translate1.to[0]!=0 || nodesvector[i].transformations[j].translate1.to[1]!=0 || nodesvector[i].transformations[j].translate1.to[2]!=0)
+		{
+			glTranslatef(nodesvector[i].transformations[j].translate1.to[0],nodesvector[i].transformations[j].translate1.to[1],nodesvector[i].transformations[j].translate1.to[2]);
+		}
+	}
+}
+
+void scene::drawNode(int i)
+{
+	/*for(int k=0;k<nodesvector[i].childs.noderefV.size();k++)
+	{
+	if(nodesvector[i].childs.noderefV[k].id=="origin");
+	{
+	myUnitCube* cube;
+	cube= new myUnitCube();
+	cube->draw();
+	}
+	}*/
+	for(int k=0;k<nodesvector[i].childs.cylinderV.size();k++)
+	{
+		myCylinder* Cylinder;
+		Cylinder=new myCylinder();
+		Cylinder->draw(nodesvector[i].childs.cylinderV[k].base,nodesvector[i].childs.cylinderV[k].top,nodesvector[i].childs.cylinderV[k].height,nodesvector[i].childs.cylinderV[k].slices,nodesvector[i].childs.cylinderV[k].stacks);
+	}
+	for(int k=0;k<nodesvector[i].childs.rectangleV.size();k++)
+	{
+		myRectangle* Rectangle;
+		Rectangle= new myRectangle();
+		Rectangle->draw(nodesvector[i].childs.rectangleV[k].xy1[0],nodesvector[i].childs.rectangleV[k].xy1[1],nodesvector[i].childs.rectangleV[k].xy2[0],nodesvector[i].childs.rectangleV[k].xy2[1]);
+	}
+	for(int k=0;k<nodesvector[i].childs.triangleV.size();k++)
+	{
+		myTriangle* Triangle;
+		Triangle= new myTriangle();
+		Triangle->draw(nodesvector[i].childs.triangleV[k].xyz1[0],nodesvector[i].childs.triangleV[k].xyz1[1],nodesvector[i].childs.triangleV[k].xyz1[2],nodesvector[i].childs.triangleV[k].xyz2[0],nodesvector[i].childs.triangleV[k].xyz2[1],nodesvector[i].childs.triangleV[k].xyz2[2],nodesvector[i].childs.triangleV[k].xyz3[0],nodesvector[i].childs.triangleV[k].xyz3[1],nodesvector[i].childs.triangleV[k].xyz3[2]);
+	}
+	for(int k=0;k<nodesvector[i].childs.sphereV.size();k++)
+	{
+		mySphere* Sphere;
+		Sphere= new mySphere();
+		Sphere->draw(nodesvector[i].childs.sphereV[k].radius,nodesvector[i].childs.sphereV[k].slices,nodesvector[i].childs.sphereV[k].stacks);
+	}
+	for(int k=0;k<nodesvector[i].childs.torusV.size();k++)
+	{
+
+	}
+}
+
+int scene::getVisitedNodesSize()
+{
+	return visitedNodes.size();
+}
+int scene::getHeritagesSize()
+{
+	return heritages.size();
+}
+char * scene::getVisitedNodes(int n)
+{
+	return visitedNodes[n];
+}
+heritage scene::getHeritages(int n)
+{
+	return heritages[n];
+}
+void scene::insertVisitedNodes(char * n)
+{
+	visitedNodes.push_back(n);
+}
+void scene::insertHeritages(heritage n)
+{
+	heritages.push_back(n);
 }
