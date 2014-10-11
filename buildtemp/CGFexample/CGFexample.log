@@ -1,22 +1,22 @@
-﻿Build started 07/10/2014 19:07:53.
-     1>Project "C:\Users\Rafael\Documents\GitHub\laig\CGFexample\CGFexample.vcxproj" on node 2 (build target(s)).
+﻿Build started 11/10/2014 15:27:29.
+     1>Project "D:\Documentos\Universidade\4.º ano\1.º semestre\Laboratório de Aplicações com Interface Gráfica\laig\CGFexample\CGFexample.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "..\buildtemp\CGFexample\CGFexample.unsuccessfulbuild" because "AlwaysCreate" was specified.
        ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"..\buildtemp\CGFexample\\" /Fd"..\buildtemp\CGFexample\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt src\scene.cpp
          scene.cpp
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(153): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(165): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(174): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(190): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(204): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(237): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(243): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(249): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(255): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\rafael\documents\github\laig\cgfexample\src\scene.cpp(261): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\documentos\universidade\4.º ano\1.º semestre\laboratório de aplicações com interface gráfica\laig\cgfexample\src\scene.cpp(153): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\documentos\universidade\4.º ano\1.º semestre\laboratório de aplicações com interface gráfica\laig\cgfexample\src\scene.cpp(165): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\documentos\universidade\4.º ano\1.º semestre\laboratório de aplicações com interface gráfica\laig\cgfexample\src\scene.cpp(174): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\documentos\universidade\4.º ano\1.º semestre\laboratório de aplicações com interface gráfica\laig\cgfexample\src\scene.cpp(190): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\documentos\universidade\4.º ano\1.º semestre\laboratório de aplicações com interface gráfica\laig\cgfexample\src\scene.cpp(204): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\documentos\universidade\4.º ano\1.º semestre\laboratório de aplicações com interface gráfica\laig\cgfexample\src\scene.cpp(237): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\documentos\universidade\4.º ano\1.º semestre\laboratório de aplicações com interface gráfica\laig\cgfexample\src\scene.cpp(243): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\documentos\universidade\4.º ano\1.º semestre\laboratório de aplicações com interface gráfica\laig\cgfexample\src\scene.cpp(249): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\documentos\universidade\4.º ano\1.º semestre\laboratório de aplicações com interface gráfica\laig\cgfexample\src\scene.cpp(255): warning C4018: '<' : signed/unsigned mismatch
+     1>d:\documentos\universidade\4.º ano\1.º semestre\laboratório de aplicações com interface gráfica\laig\cgfexample\src\scene.cpp(261): warning C4018: '<' : signed/unsigned mismatch
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"bin\CGFexample.exe" /NOLOGO glew32.lib CGFlib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib tinyxml.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"..\buildtemp\CGFexample\CGFexample.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Rafael\Documents\GitHub\laig\CGFexample\bin\CGFexample.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"bin\CGFexample.lib" /MACHINE:X86 ..\buildtemp\CGFexample\main.obj
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"bin\CGFexample.exe" /NOLOGO glew32.lib CGFlib.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib tinyxml.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"..\buildtemp\CGFexample\CGFexample.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"D:\Documentos\Universidade\4.º ano\1.º semestre\Laboratório de Aplicações com Interface Gráfica\laig\CGFexample\bin\CGFexample.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"bin\CGFexample.lib" /MACHINE:X86 ..\buildtemp\CGFexample\main.obj
          ..\buildtemp\CGFexample\myCylinder.obj
          ..\buildtemp\CGFexample\myRectangle.obj
          ..\buildtemp\CGFexample\mySphere.obj
@@ -26,29 +26,29 @@
          ..\buildtemp\CGFexample\XMLScene.obj
          LINK : bin\CGFexample.exe not found or not built by the last incremental link; performing full link
      1>LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
-     1>CGFlib.lib(CGFappearance.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFappearance.obj)' or at 'C:\Users\Rafael\Documents\GitHub\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
-     1>CGFlib.lib(CGFapplication.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFapplication.obj)' or at 'C:\Users\Rafael\Documents\GitHub\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
-     1>CGFlib.lib(CGFaxis.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFaxis.obj)' or at 'C:\Users\Rafael\Documents\GitHub\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
-     1>CGFlib.lib(CGFcamera.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFcamera.obj)' or at 'C:\Users\Rafael\Documents\GitHub\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
-     1>CGFlib.lib(CGFinterface.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFinterface.obj)' or at 'C:\Users\Rafael\Documents\GitHub\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
-     1>CGFlib.lib(CGFlight.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFlight.obj)' or at 'C:\Users\Rafael\Documents\GitHub\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
-     1>CGFlib.lib(CGFobject.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFobject.obj)' or at 'C:\Users\Rafael\Documents\GitHub\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
-     1>CGFlib.lib(CGFscene.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFscene.obj)' or at 'C:\Users\Rafael\Documents\GitHub\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
-     1>CGFlib.lib(CGFtexture.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFtexture.obj)' or at 'C:\Users\Rafael\Documents\GitHub\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
-     1>CGFlib.lib(imagetools.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(imagetools.obj)' or at 'C:\Users\Rafael\Documents\GitHub\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
-     1>CGFlib.lib(stb_image.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(stb_image.obj)' or at 'C:\Users\Rafael\Documents\GitHub\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
-     1>tinyxml.lib(tinystr.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tinyxml.lib(tinystr.obj)' or at 'C:\Users\Rafael\Documents\GitHub\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
-     1>tinyxml.lib(tinyxml.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tinyxml.lib(tinyxml.obj)' or at 'C:\Users\Rafael\Documents\GitHub\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
-     1>tinyxml.lib(tinyxmlerror.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tinyxml.lib(tinyxmlerror.obj)' or at 'C:\Users\Rafael\Documents\GitHub\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
-     1>tinyxml.lib(tinyxmlparser.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tinyxml.lib(tinyxmlparser.obj)' or at 'C:\Users\Rafael\Documents\GitHub\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
-         CGFexample.vcxproj -> C:\Users\Rafael\Documents\GitHub\laig\CGFexample\bin\CGFexample.exe
+     1>CGFlib.lib(CGFappearance.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFappearance.obj)' or at 'D:\Documentos\Universidade\4.º ano\1.º semestre\Laboratório de Aplicações com Interface Gráfica\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
+     1>CGFlib.lib(CGFapplication.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFapplication.obj)' or at 'D:\Documentos\Universidade\4.º ano\1.º semestre\Laboratório de Aplicações com Interface Gráfica\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
+     1>CGFlib.lib(CGFaxis.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFaxis.obj)' or at 'D:\Documentos\Universidade\4.º ano\1.º semestre\Laboratório de Aplicações com Interface Gráfica\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
+     1>CGFlib.lib(CGFcamera.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFcamera.obj)' or at 'D:\Documentos\Universidade\4.º ano\1.º semestre\Laboratório de Aplicações com Interface Gráfica\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
+     1>CGFlib.lib(CGFinterface.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFinterface.obj)' or at 'D:\Documentos\Universidade\4.º ano\1.º semestre\Laboratório de Aplicações com Interface Gráfica\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
+     1>CGFlib.lib(CGFlight.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFlight.obj)' or at 'D:\Documentos\Universidade\4.º ano\1.º semestre\Laboratório de Aplicações com Interface Gráfica\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
+     1>CGFlib.lib(CGFobject.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFobject.obj)' or at 'D:\Documentos\Universidade\4.º ano\1.º semestre\Laboratório de Aplicações com Interface Gráfica\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
+     1>CGFlib.lib(CGFscene.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFscene.obj)' or at 'D:\Documentos\Universidade\4.º ano\1.º semestre\Laboratório de Aplicações com Interface Gráfica\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
+     1>CGFlib.lib(CGFtexture.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(CGFtexture.obj)' or at 'D:\Documentos\Universidade\4.º ano\1.º semestre\Laboratório de Aplicações com Interface Gráfica\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
+     1>CGFlib.lib(imagetools.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(imagetools.obj)' or at 'D:\Documentos\Universidade\4.º ano\1.º semestre\Laboratório de Aplicações com Interface Gráfica\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
+     1>CGFlib.lib(stb_image.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'CGFlib.lib(stb_image.obj)' or at 'D:\Documentos\Universidade\4.º ano\1.º semestre\Laboratório de Aplicações com Interface Gráfica\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
+     1>tinyxml.lib(tinystr.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tinyxml.lib(tinystr.obj)' or at 'D:\Documentos\Universidade\4.º ano\1.º semestre\Laboratório de Aplicações com Interface Gráfica\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
+     1>tinyxml.lib(tinyxml.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tinyxml.lib(tinyxml.obj)' or at 'D:\Documentos\Universidade\4.º ano\1.º semestre\Laboratório de Aplicações com Interface Gráfica\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
+     1>tinyxml.lib(tinyxmlerror.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tinyxml.lib(tinyxmlerror.obj)' or at 'D:\Documentos\Universidade\4.º ano\1.º semestre\Laboratório de Aplicações com Interface Gráfica\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
+     1>tinyxml.lib(tinyxmlparser.obj) : warning LNK4099: PDB 'vc100.pdb' was not found with 'tinyxml.lib(tinyxmlparser.obj)' or at 'D:\Documentos\Universidade\4.º ano\1.º semestre\Laboratório de Aplicações com Interface Gráfica\laig\CGFexample\bin\vc100.pdb'; linking object as if no debug info
+         CGFexample.vcxproj -> D:\Documentos\Universidade\4.º ano\1.º semestre\Laboratório de Aplicações com Interface Gráfica\laig\CGFexample\bin\CGFexample.exe
        Manifest:
          C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"bin\CGFexample.exe;#1" /manifest ..\buildtemp\CGFexample\CGFexample.exe.intermediate.manifest
        FinalizeBuildStatus:
          Deleting file "..\buildtemp\CGFexample\CGFexample.unsuccessfulbuild".
          Touching "..\buildtemp\CGFexample\CGFexample.lastbuildstate".
-     1>Done Building Project "C:\Users\Rafael\Documents\GitHub\laig\CGFexample\CGFexample.vcxproj" (build target(s)).
+     1>Done Building Project "D:\Documentos\Universidade\4.º ano\1.º semestre\Laboratório de Aplicações com Interface Gráfica\laig\CGFexample\CGFexample.vcxproj" (build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:01.23
+Time Elapsed 00:00:01.10

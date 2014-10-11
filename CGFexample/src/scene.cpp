@@ -21,7 +21,7 @@ std::vector<nodee> nodesvector2;
 void scene::init() 
 {
 	XMLScene *qwerty;
-	qwerty=new XMLScene("C:\\Users\\Rafael\\Documents\\GitHub\\laig\\CGFexample\\src\\default.anf");
+	qwerty=new XMLScene("D:\\Documentos\\Universidade\\4.º ano\\1.º semestre\\Laboratório de Aplicações com Interface Gráfica\\laig\\CGFexample\\src\\default.anf");
 	nodesvector=qwerty->getNodesvectorFull();
 
 	float globalAmbientLight[4]={0,0,0,0};
